@@ -1,3 +1,27 @@
+sudo systemctl restart daahuk_backend.service
+
+sudo systemctl restart nginx
+===============================================
+git rm -r --cached .
+
+=====================================================================================
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+==================================================================================
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.2/howto/static-files/
+
+STATIC_URL = '/static/'
+# ALL Static files like js, css will be stored here
+STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_root')
+MEDIA_URL = '/media/'
+# ALL media files like image, audio, video will be stored here
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static', 'static_files'),
+]
+===================================================================================
 server {
         listen 80;
         listen [::]:80;
