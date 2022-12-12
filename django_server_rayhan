@@ -1,0 +1,13 @@
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /home/daahuk/daahuk_frontend_nuxt/dist/index.html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name daahuk.org www.daahuk.org;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
